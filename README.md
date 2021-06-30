@@ -1,25 +1,25 @@
 <h1> Poll Creator</h1> 
 <ul>
-<li>About </li>
+  <li><h3>About</h3> </li>
 <p>
 It is a  application that allows user to create public and private polls on Ethereum Network.
 </p>
-  <li>Screen Shots</li>
+  <li><h3>Screen Shots</h3></li>
   <ul>
-    <li>LogIn And Sign Up </li>
+    <li><h5>LogIn And Sign Up</h5> </li>
     <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Log%20In.PNG" width="600" height="300" >
     <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Sign%20Up.PNG" width="600" height="300" >
-    <li>Home Page </li>
+    <li><h5>Home Page</h5> </li>
     <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Home.PNG"  width="600" height="300" >
-     <li>Poll Pages </li>
+    <li><h5>Poll Pages</h5> </li>
      <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Private%20Poll.PNG"  width="600" height="300" >
      <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Public%20Poll.PNG"  width="600" height="300" >
-    <li>Voting page</li>
+    <li><h5>Voting page</h5></li>
     <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Voting.PNG"  width="600" height="300" >
-      <li>User Space</li>
+      <li><h5>User Space</h5></li>
          <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Profile.PNG"  width="600" height="300" >
          <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Result%20And%20Details.PNG"  width="600" height="300" >
-     <li>Admin Panel</li>
+     <li><h5>Admin Panel</h5></li>
          <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Admin%20Log%20In.PNG"  width="600" height="300" >
          <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Admin%20DashBoard.PNG"  width="600" height="300" >
          <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Admin%20Poll%20Data.PNG"  width="600" height="300" >
