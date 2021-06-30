@@ -7,7 +7,7 @@ It is a  application that allows user to create public and private polls on Ethe
   <li>Screen Shots</li>
   <ol>
     <li>LogIn And Sign Up </li>
-    <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Log%20In.PNG" >
+    <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Log%20In.PNG" width="200" height="100" >
     <img alt="Image is not loaded" src="https://github.com/vermapranav86/Pollcreator/blob/master/Screenshots/Sign%20Up.PNG" >
   </ol>
 </ul>
