@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Poll</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+
+    <!-- Nabvar -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html" id="ht">Poll Creator</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <!-- yaha pe active class thi -->
+            <a class="nav-link mr-5" href="signup.html">
+              Sign Up<span class="sr-only">(current)</span></a
+            >
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link " href="#">About Us</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- Container -->
+
+
+    <div class="container">
+      <div class="row">
+        <div id="col1" class="col-md-7">
+          <div id="image-container">
+
+          
+          <div id="imagediv">
+            <p>
+              <h1>Create polls within<br> minute.</h1>  That too with
+              more security and features <br />
+            </p>
+            
+            <img src="undraw_voting_nvu7.svg" alt="" />
+          
+          </div>
+
+        </div>
+        </div>
+        <div id="col2" class="col-md-5">
+          <h2>Sign In</h2>
+          <div class="input-field i1">
+           <i class="fas fa-user"></i>
+            <input type="text" name="" id="uname" placeholder="Username" />
+          </div>
+          <span class="s11" id="uname_span"></span>
+          <div class="input-field i2">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="" id="pass" placeholder="Password" />
+          </div>
+          <span class="s11" id="pass_span"></span>
+          <button id="logbutton" class="btn btn-primary">LOGIN</button>
+          <!-- <p id="fp">Forgot Password? <a href="#">Click here</a></p> -->
+        </div>
+      </div>
+      <!-- <div class="img-container">
+        <div id="svgimage">
+          <img src="wave (1).svg" alt="">
+        </div>
+      </div> -->
+    </div>
+      <!-- <div id="bott-img" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C27.84,25.81 103.46,15.95 165.54,99.83 L208.99,162.00 L0.00,150.00 Z" style="stroke: none; fill: #08f;"></path></svg></div> -->
+      <!-- <div id="bot-b-con"><div id="bot-b"></div></div> -->
+ <script>
+      $(document).ready(function () {
+        // Designing Part
+
+        $("#uname").focus(function () {
+          $(".fa-user").css("color", "#0099ff");
+          $(".i1").css("border-bottom", "2px solid #0099ff");
+        });
+        $("#uname").blur(function () {
+          $(".fa-user").css("color", "black");
+          $(".i1").css("border-bottom", "2px solid black");
+        });
+        $("#pass").focus(function () {
+          $(".fa-lock").css("color", "#0099ff");
+          $(".i2").css("border-bottom", "2px solid #0099ff");
+        });
+        $("#pass").blur(function () {
+          $(".fa-lock").css("color", "black");
+          $(".i2").css("border-bottom", "2px solid black");
+        });
+
+        // Validation Part
+
+        $("#logbutton").on("click", function () {
+          var uname = $("#uname").val();
+          var pass = $("#pass").val();
+
+          if (uname == "") {
+            $("#uname_span").html("please enter username");
+            $("#uname_span").css("margin-left", "10%");
+            $(".fa-user").css("color", "red");
+            $(".i1").css("border-bottom", "2px solid red");
+          }
+           else if (pass == "") {
+            $("#pass_span").html("please enter password");
+            $("#uname_span").html("");
+            $("#uname_span").css("margin-left", "0%");
+            $("#pass_span").css("margin-left", "10%");
+            $(".fa-lock").css("color", "red");
+            $(".i2").css("border-bottom", "2px solid red");
+          }
+           else {
+            $.ajax({
+              type: "POST",
+              url: "login_veri.php",
+              data: {
+                uname: uname,
+                pass: pass,
+              },
+
+              success: function (data) {
+  
+                if(data == "Invalid password"){
+                $("#pass_span").html("Wrong password");
+                $(".s11").css("margin-left", "10%");
+                $(".fa-lock").css("color", "red");
+            $(".i2").css("border-bottom", "2px solid red");
+                }
+                else if(data == "Invalid Credentials"){
+                  $("#pass_span").html("Invalid Credentials");
+                  $(".s11").css("margin-left", "10%");
+                  $("#uname_span").html("");
+                  $("#uname_span").css("margin-left", "0%");
+                }
+                else{
+                  window.location.href = 'welcome.php';
+                }
+              },
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

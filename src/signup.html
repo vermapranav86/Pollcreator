@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll new - Signup</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="signup.css" />
+    <script src="abi.js"></script>
+  </head>
+  <body>
+    <script>
+
+
+  
+        
+
+
+
+
+
+       window.addEventListener('load', async () => {
+
+
+        let web3Provider=null;
+    if (window.ethereum) {
+        web3Provider = window.ethereum;
+      try {
+       
+        await window.ethereum.enable();
+        
+      } catch (error) {
+       
+        console.error("User denied account access")
+      }
+    }
+    else if (window.web3) {
+          web3Provider = window.web3.currentProvider;
+        }
+       
+        else {
+          web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+        }
+        web3 = new Web3(web3Provider);
+
+
+
+
+        
+        
+  
+        const account = await getAccount();
+        
+         document.getElementById("ethadd").value = account;
+        console.log(account);
+           
+     
+       });
+    </script>
+    <div class="container">
+      
+      <div id="signup-container" class="row">
+        <div id="panel-container" class="col-md-4">
+          <img src="undraw_Access_account_re_8spm.svg" alt="" />
+        </div>
+        <div id="sign-up" class="col-md-8">
+
+          <div id="signup-con">
+          <h2>Sign Up</h2>
+
+          <div class="input-field">
+            <input type="text" name="" id="fname" placeholder="First Name" />
+            <br><span class="s1" id="fname_span"></span><br />
+             <!-- <div id="sq"><div ><span >hello world</span></div></div> -->
+            <input type="text" name="" id="lname" placeholder="Last Name" />
+            <br><span class="s1" id="lname_span"></span><br />
+            <input type="text" name="" id="email" placeholder="Email" />
+            <br><span class="s1" id="email_span"></span><br />
+            <input type="text" name="" id="ethadd" placeholder="Ethereum Address" />
+            <br><span class="s1" id="email_span"></span><br /> 
+            <input type="password" name="" id="pass" placeholder="Password" />
+            <br><span class="s1" id="pass_span"></span><br />
+            <input type="password" name="" id="cpass" placeholder="Confirm Password" />
+            <br><span class="s1" id="cpass_span"></span><br /><br>
+          </div>
+          <button id="signbutton" class="btn btn-primary">Sign up</button>
+
+          <!-- <p>Or sign up using social platforms</p>
+
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+          </div> -->
+
+          <p>Already have an account?<a href="index.html">Sign in</a></p>
+        </div>
+      </div>
+
+  
+
+      </div>
+
+      <script>
+        $(document).ready(function () {
+
+          var fname_test = "";
+          var lname_test = "";
+          var email_test = "";
+          var pass_test = "";
+          var form_cpass = "";
+          var check_pass = "";
+          var form_fname = "";
+          var form_lname = "";
+          var form_email = "";
+          var form_pass = " ";
+
+
+
+
+          $("#fname").on("keyup", function () {
+            var fname_regx = new RegExp(/^[a-zA-z]{1,20}$/);
+            form_fname = $("#fname").val();
+
+            if(form_fname == ""){
+              $("#fname_span").html("Field cannot be left empty"); 
+            }
+            else{ 
+
+            fname_test = fname_regx.test(form_fname);
+
+            if (fname_test == false) {
+              $("#fname_span").html("Only alphabets allowed!");
+            } else {
+              $("#fname_span").html("");
+            }
+
+          }
+          });
+
+          $("#lname").on("keyup", function () {
+            var lname_regx = new RegExp(/^[a-zA-z]{1,20}$/);
+            form_lname = $("#lname").val();
+
+            if(form_lname == ""){
+              $("#lname_span").html("Field cannot be left empty"); 
+            }
+            else{
+
+             lname_test = lname_regx.test(form_lname);
+
+            if (lname_test == false) {
+              $("#lname_span").html("Only alphabets allowed!");
+            } else {
+              $("#lname_span").html("");
+            }
+          }
+          });
+
+          $("#email").on("keyup", function () {
+            var email_regx = new RegExp(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]{2,3})$/
+            );
+            form_email = $("#email").val();
+
+            if(form_email == ""){
+              $("#email_span").html("Field cannot be left empty"); 
+            }
+            else{
+
+            email_test = email_regx.test(form_email);
+
+            if (email_test == false) {
+              $("#email_span").html("Invaid email format");
+            } else {
+              $("#email_span").html("");
+            }
+          }
+          });
+
+
+          $("#pass").on("keyup", function () {
+            var pass_regx = new RegExp(/^.{8,15}$/);
+            form_pass = $("#pass").val();
+
+            if(form_pass == ""){
+              $("#pass_span").html("Field cannot be left empty"); 
+            }
+            else{
+
+             pass_test = pass_regx.test(form_pass);
+
+            if (pass_test == false) {
+              $("#pass_span").html("maintain length{8-15 char}");
+            } else {
+              $("#pass_span").html("");
+            }
+          }
+          });
+
+          $("#cpass").on("keyup", function () {
+           
+            form_cpass = $("#cpass").val();
+            check_pass = $("#pass").val();
+
+            if(check_pass == ""){
+              $("#cpass_span").html("please enter password first");
+            }
+            else if(form_cpass == ""){
+              $("#cpass_span").html("Field cannot be left empty");
+            }
+            else if(form_cpass !== check_pass ){
+              $("#cpass_span").html("password does not match");
+            }
+            else{
+              $("#cpass_span").html("");
+            }
+
+          });
+
+
+          $("#signbutton").on("click", function () {
+
+            if(fname_test == true && lname_test == true && email_test == true && pass_test == true && form_cpass == check_pass){
+
+              var fname = form_fname;
+              var lname = form_lname;
+              var email = form_email;
+              var pass = form_pass;
+              var ethadd = $("#ethadd").val();
+
+              $.ajax({
+                    type: "POST",
+                    url: "signup_veri.php",
+                    data: {
+                        fname: fname,
+                        lname: lname,
+                        email: email,
+                        pass: pass,
+                        ethadd:ethadd
+                    },
+
+                    success: function (data) {
+
+                      // if(data == 1){
+
+                      //   $("#fname").val("");
+                      //   $("#lname").val("");
+                      //   $("#email").val("");
+                      //   $("#pass").val("");
+                      //   $("#cpass").val("");
+
+                      // }
+                      alert("signup successfull");
+                      window.location.href = 'index.html';
+                     
+                    }
+              });
+
+            }
+            else{
+              alert("Please Entre credentials");
+            }
+            
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>

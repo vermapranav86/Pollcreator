@@ -1,0 +1,144 @@
+#signup-container {
+  height: 90%;
+  width: 80%;
+  margin: 3% 10% 3% 10%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 4%;
+}
+
+#signup-con {
+  margin-left: 25%;
+}
+
+#panel-container img {
+  height: 120%;
+  width: 120%;
+  /* z-index: -1; */
+}
+/* #sign-up{
+    background-color: crimson;
+} */
+
+.social-media {
+  margin: 2% 2% 0% 5%;
+}
+
+.social-icon {
+  height: 46px;
+  width: 46px;
+  /* border: 1px solid #333; */
+  margin: 2px;
+  padding: 4px;
+  color: #333;
+  border-radius: 0%;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #0099ff;
+  border-color: #0099ff;
+}
+
+.input-field {
+  font-size: 1.1rem;
+  color: black;
+  transition: 1s;
+  line-height: 0.8rem;
+}
+
+.input-field input {
+  background: rgb(231, 226, 226);
+  outline: none;
+  border: none;
+  margin: 3% 2% 3% 5%;
+}
+
+#sign-up h2 {
+  margin: 2% 2% 4% 5%;
+}
+
+#signbutton {
+  margin: 0% 2% 0% 5%;
+  background-color: #0099ff;
+  border-radius: 0px;
+  transition: 0.5s;
+}
+#signbutton:hover {
+  background-color: #0662a0;
+}
+
+#sign-up p {
+  margin: 2% 2% 0% 5%;
+}
+
+.s1 {
+  font-size: 0.7rem;
+  color: #c92432;
+  margin-left: 5%;
+}
+/* 
+@media (max-width:1200){
+
+    #panel-container img{
+
+        height: 150%;
+        width: 140%;
+        z-index: -1;
+    
+    }
+} */
+@media (max-width: 990px) {
+  #panel-container img {
+    width: 160%;
+  }
+}
+
+@media (max-width: 770px) {
+  #signup-container {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+  }
+
+  #panel-container {
+    display: none;
+  }
+  #signup-con {
+    margin-left: 13%;
+  }
+}
+
+@media (max-width: 470px) {
+  #signup-con {
+    margin-left: 5%;
+  }
+  .input-field input {
+    width: 80%;
+  }
+}
+@media (max-width: 320px) {
+ 
+  #signup-container {
+    height: 110%;
+    width: 85%;
+  }
+
+}
+
+#sq {
+  display: none;
+}
+
+/* #panel-container img{
+        height: 150%;
+        width: 140%; 
+        z-index: -1;
+        margin-bottom: 10%;
+ 
+    }
+
+    #panel-container{
+        margin-bottom: 10%;
+    } */
