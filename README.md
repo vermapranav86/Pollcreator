@@ -2,7 +2,7 @@
 <ul>
   <li><h3>About</h3> </li>
 <p>
-It is a  application that allows user to create public and private polls on Ethereum Network.
+It is an application that allows users to create public and private polls on Ethereum Network. Php and Mysql are used for user authentication and platform supervision.
 </p>
   <li><h3>Screen Shots</h3></li>
   <ul>
